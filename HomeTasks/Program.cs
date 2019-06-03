@@ -10,22 +10,38 @@ namespace HomeTasks
     {
         static void Main(string[] args)
         {
-            int[] months = new int[12];
-            for (int i = 0; i < months.Length; i++)
-            {
-                months[i] = ((i + 1) % 2 == 0 ? 30 : 31);
-                if (i >= 7)
-                {
 
-                   months[i]=(i + 1) % 2 == 0 ? months[i]+1 : months[i]-1;
-                   Console.WriteLine("hi");
-                }
-            if (i == 1) { months[i] = 28; }
-            }
-            for (int i = 0; i < months.Length; i++)
+            int size = 9;
+            char[][] arr3 = new char[size][];
+            for (int i = 0; i < arr3.Length; i++)
             {
-                Console.Write("month" + (i + 1) + "=" + months[i] + '\n');
+                char[] temp = new char[size];
+                for (int j = 0; j < temp.Length; j++)
+                {
+                    if (i == 0 || i == arr3.Length - 1 || j == 0 || j == temp.Length - 1  || i==(arr3.Length-1)/2 || j==(temp.Length-1)/2)
+                    {
+                        temp[j] = '*';
+                    }
+                    else
+                    {
+                        temp[j] = ' ';
+                    }
+                }
+                arr3[i] = temp;
             }
+            for (int i = 0; i < arr3.Length; i++)
+            {
+                for (int j = 0; j < arr3[i].Length; j++)
+                {
+                    Console.Write(arr3[i][j]);
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+
         }
     }
 }
+        
+    
+
