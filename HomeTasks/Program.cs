@@ -11,34 +11,37 @@ namespace HomeTasks
         static void Main(string[] args)
         {
 
-            int size = 9;
-            char[][] arr3 = new char[size][];
-            for (int i = 0; i < arr3.Length; i++)
+            string user;
+            char[] field = new char[10];
+            int dog = 0;
+            Boolean countdog = false;
+            do
             {
-                char[] temp = new char[size];
-                for (int j = 0; j < temp.Length; j++)
+                for (int i = 0; i < field.Length; i++)
                 {
-                    if (i == 0 || i == arr3.Length - 1 || j == 0 || j == temp.Length - 1  || i==(arr3.Length-1)/2 || j==(temp.Length-1)/2)
+                    if (countdog == false && i==dog)
                     {
-                        temp[j] = '*';
+                        field[dog] = '@';
+                        countdog = true;
                     }
                     else
                     {
-                        temp[j] = ' ';
+                        field[i] = '_';
                     }
+                    Console.Write(field[i]);
                 }
-                arr3[i] = temp;
-            }
-            for (int i = 0; i < arr3.Length; i++)
-            {
-                for (int j = 0; j < arr3[i].Length; j++)
+                user = Console.ReadLine();
+                if (user == "d")
                 {
-                    Console.Write(arr3[i][j]);
+                    dog++;
+                    countdog = false;
                 }
-                Console.WriteLine();
-            }
-            Console.ReadKey();
-
+                else if (user == "a")
+                {
+                    dog--;
+                    countdog = false;
+                }
+            } while (dog < 10);
         }
     }
 }
