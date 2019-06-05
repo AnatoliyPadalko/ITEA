@@ -30,6 +30,9 @@ namespace HomeTasks
 
             do
             {
+
+
+                Console.Write("\b");
                 for (int i = 0; i < field.Length; i++)
                 {
                     
@@ -42,11 +45,19 @@ namespace HomeTasks
                     {
                         field[i] = '_';
                     }
-                    Console.Write(field[i]);
+ 
                 }
-                Console.Write("Helth = "+hp);
-                user = Console.ReadLine();
                
+                Console.Clear();
+                for (int i = 0; i < field.Length; i++)
+                {
+                    Console.Write(field[i]);
+                    
+                }
+                Console.Write("\tHelth = " + hp + "");
+                
+              
+                user = Console.ReadLine();
                 if (user == "d")
                 {
                     dog++;
@@ -66,6 +77,10 @@ namespace HomeTasks
                 if (dog == aid)
                 {
                     hp = hp + 40;
+                }
+                if (hp > 100)
+                {
+                    hp = 100;
                 }
             } while (dog >= 0 && hp>0 && dog<10);
           
