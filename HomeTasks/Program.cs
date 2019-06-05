@@ -26,7 +26,6 @@ namespace HomeTasks
               do
                   {
 
-
                       for(int i=0;i<field.Length;i++)
                       {
                         do
@@ -56,17 +55,17 @@ namespace HomeTasks
                                 temp[j] = '+';
                             }
                        
-                        }
-                       field[i] = temp;
-                      }
-             
+                    }
+                    field[i] = temp;
+                }
+               
 
                 Console.Clear();
 
                   for (int i = 0; i < field.Length; i++)
                   {
 
-                      for (int j = 0; j < field.Length; j++)
+                      for (int j = 0; j < temp.Length; j++)
                       {
                           Console.Write(field[i][j]);
                       }
