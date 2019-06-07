@@ -10,63 +10,36 @@ namespace HomeTasks
     {
         static void Main(string[] args)
         {
-            String name = "padalko anatoliy anatoliyovich";
-            Console.WriteLine(name);
-           
-            char[] temp={' '};
-            String[] splitname= name.Split(temp);
-           
-            //String tempresult = "";
-            //Char[] Result = new char [name.Length];
-       
-            for (int i=0;i<splitname.Length;i++)
+            string abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            Random rnd = new Random();
+            int countwords = rnd.Next(3, 8);
+            int[] countletters = new int[countwords];
+            string[] result = new string [countwords];
+            for (int i=0;i<countwords-1;i++)
             {
-                
-                String tempstringresult = "";
-                for (int j = 0; j < splitname[i].Length; j++)
+                countletters[i] = rnd.Next(5, 10);
+            }
+            for(int i=0;i<countwords-1;i++)
+            {
+                for (int j = 0; j < countletters[i]-1; j++)
                 {
-                  
-                    char tempchar = splitname[i][j];
+                    int temprnd = rnd.Next(abc.Length);
+                    string tempresult = abc[temprnd].ToString();
+                    result[i] += tempresult;
                    
-                    if (j == 0)
-                    {
-                        string tempString = tempchar.ToString().ToUpper();
-                        tempstringresult += tempString;
-                       
-                       
-                    }
-                    if (j > 0 && i==0) 
-                    {
-                        string tempString = tempchar.ToString();
-                        tempstringresult += tempString;
-                       
-                    }
-                    if (i == 0 & j == splitname[i].Length-1)
-                    {
-                        string tempString = " ";
-                        tempstringresult += tempString;
-                    }
-                    if (j==1 && i>0)
-                    {
-                        string tempString = ".";
-                        tempstringresult += tempString;
-                    }
                    
-
                 }
-
-                splitname[i] = tempstringresult;
+              
             }
 
-            for (int i = 0; i < splitname.Length; i++)
+            for (int i = 0; i < countwords; i++)
             {
-               for(int j=0;j<splitname[i].Length;j++)
-                { 
-                    Console.Write(splitname[i][j]);
-                }
+
+                    Console.WriteLine(result[i]);
                 
             }
-            Console.Write("\n");
+
+
         }
     }
 }
