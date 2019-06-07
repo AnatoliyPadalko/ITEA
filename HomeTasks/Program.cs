@@ -15,9 +15,6 @@ namespace HomeTasks
            
             char[] temp={' '};
             String[] splitname= name.Split(temp);
-           
-            //String tempresult = "";
-            //Char[] Result = new char [name.Length];
        
             for (int i=0;i<splitname.Length;i++)
             {
